@@ -1,3 +1,4 @@
+//Tatiana Evelyn Montenegro comision 5 
 let pantalla = 1;
 let nave, enemigos = [], balas = [];
 let juegoTerminado = false;

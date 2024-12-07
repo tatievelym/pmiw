@@ -1,0 +1,19 @@
+FATAL FRAME
+Este es un juego creado por Koei Tecmo, una compañía creada en 2009 a partir de la fusión de las compañías desarrolladoras de videojuegos y distribuidoras japonesas Tecmo y Koei.
+Alumna: Montenegro Tatiana
+Entre los residentes de los pueblos al pie del Monte Hikami una cierta habilidad única se ha transmitido a través de los tiempos. Esta habilidad es conocida como 'Lectura de Sombras', permite al usuario ver la sombra, o el 'rastro', de alguien que ha desaparecido en circunstancias inexplicables. Yuri Kozukata, una mujer que posee la capacidad de leer las sombras, hacia una posada abandonada en el Monte Hikami.
+A través de esta cámara podremos ver y capturar a los fantasmas que se encuentran aquí hace ya muchos años, tratarán de atacarte, ten cuidado!! Debemos capturar al menos a uno de ellos.
+En este pasillo hay dos habitaciones, en ambas habrán fantasmas. ¿Entrar primero al sótano?
+Nos acercamos a esta habitación, parece no haber nadie, ¡entremos!!
+¡Hay un fantasma aquí!! Hay que capturarlo o nos hará daño!! ¡Toma la cámara!!!
+Los Fragmentos de Espíritu se rompen cuando un fantasma recibe daño. Después de un tiempo, se reabsorben. Fotografía los fragmentos antes de que eso ocurra.
+¡Hemos logrado debilitar y capturar a este fantasma, lo has hecho muy bien!!
+Vuelve al principio a por una nueva aventura!!
+Dentro de este sótano hay muchos fantasmas, no podremos capturar a todos!! ¿Prefieres huir...?
+Han logrado alcanzarte, te han llevado con ellos, ahora tu espíritu rondará por este mismo monte hasta el final...
+Corre por este pasillo hasta llegar al final, intentarán perseguirte, ¡no dejes que te atrapen!!
+Debes ser rápido, sino no podrás llegar a capturar a todos, ¡te llevarán con ellos!!
+¡Estás fuera!! Los fantasmas ya no van a poder hacerte daño.
+¡Se están acercando demasiado, están por alcanzarte!! ¡Vamos, vamos!!
+No has logrado el objetivo, debemos capturar al menos alguno, ¡vuelve a intentarlo, toma la decisión correcta!
+Ya puedes irte a salvo.

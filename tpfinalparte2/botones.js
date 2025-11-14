@@ -1,80 +1,80 @@
 class Boton {
-  constructor(x, y, w, h, texto, destino) {
+  constructor(x, y, w, h, destino) {
+    this.botones = [];
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
-    this.texto = texto;
     this.destino = destino; // pantalla destino
   }
 
-  dibujar(corner) {
+  dibujar(texto) {
     // hover
-    if (mouseX > this.x && mouseX < this.x + this.w &&
-      mouseY > this.y && mouseY < this.y + this.h) {
-
-      fill(255, 200, 0);
+    if (mouseX > this.x && mouseX < this.x + this.w && mouseY > this.y && mouseY < this.y + this.h) {
+      fill(228, 0, 2);
       noStroke();
     } else {
       fill(255);
       stroke(0);
       strokeWeight(1);
     }
-
-    rect(this.x, this.y, this.w, this.h, corner);
+    rect(this.x, this.y, this.w, this.h, 16);
 
     // texto
-    fill(mouseX > this.x && mouseX < this.x + this.w &&
-      mouseY > this.y && mouseY < this.y + this.h ? 255 : 0);
-
-    text(this.texto, this.x + 5, this.y);
+    fill(mouseX > this.x && mouseX < this.x + this.w && mouseY > this.y && mouseY < this.y + this.h ? 255 : 0);
+    text(texto, this.x + 15, this.y+10);
   }
 
   clic() {
     return (
-      mouseX > this.x &&
-      mouseX < this.x + this.w &&
-      mouseY > this.y &&
-      mouseY < this.y + this.h
-      );
-  }
-}
-
-function crearBotones() {
-  botones = [
-    // x, y, w, h, texto, destino
-    new Boton(50, 350, 200, 60, "INICIAR", "juego"), // índice 0
-    new Boton(300, 350, 200, 60, "CONTROLES", "controles"), // índice 1
-    new Boton(50, 350, 200, 60, "VOLVER", "inicio")      // índice 2
-  ];
-}
-
-function botonesPantalla() {
-  let corner = 16;
-  push();
-  textFont(fuente);
-  textSize(32);
-  textAlign(LEFT, TOP);
-
-  if (pantalla.p === 'inicio') {
-    botones[0].dibujar(corner);
-    botones[1].dibujar(corner);
-  } else if (pantalla.p === 'controles') {
-    botones[2].dibujar(corner);
-  } else if (pantalla.p === 'juego') {
+      mouseX > this.x && mouseX < this.x + this.w && mouseY > this.y && mouseY < this.y + this.h);
   }
 
-  pop();
-}
-function mouseReleased() {
-  for (let i = 0; i < botones.length; i++) {
-    if (botones[i].clic()) {
-      // if (sonidoClic) sonidoClic.play();
-      pantalla.p = botones[i].destino;
-      console.log("cambiaste a pantalla:", pantalla.p);
-      // si presionaste INICIAR
-      if (botones[i].destino === "juego") {
-        tiempoInicio = millis();
+  crearBotones() {
+    this.botones = [
+      // x, y, w, h, texto, destino
+      new Boton(50, 350, 140, 60, "juego"), // índice 0: Iniciar
+      new Boton(width-250, 350, 200, 60, "controles"), // índice 1: controles
+      new Boton(width/2-60, 350, 120, 60, "inicio")      // índice 2: inicio
+    ];
+  }
+
+  botonesPantalla() {
+    push();
+    textFont(pantalla.fuente);
+    textSize(32);
+    textAlign(LEFT, TOP);
+
+    if (pantalla.p === 'inicio') {
+      this.botones[0].dibujar("INICIAR");
+      this.botones[1].dibujar("CONTROLES");
+    } else if (pantalla.p === 'controles') {
+      this.botones[2].dibujar("INICIO");
+    }
+    pop();
+  }
+ 
+  cambioPantalla() {
+    //INICIO
+    if (pantalla.p === 'inicio') {
+      if (this.botones[0].clic()) {
+        pantalla.p = this.botones[0].destino; //juego
+        juego.iniciar();
+        console.log("cambiaste a pantalla:", pantalla.p);
+        return;
+      }
+      // CONTROLES
+      if (this.botones[1].clic()) {
+        pantalla.p = this.botones[1].destino; //controles
+        console.log("cambiaste a pantalla:", pantalla.p);
+        return;
+      }
+    } else if (pantalla.p === 'controles') {
+      // INICIO
+      if (this.botones[2].clic()) {
+        pantalla.p = this.botones[2].destino; //inicio
+        console.log("cambiaste a pantalla:", pantalla.p);
+        return;
       }
     }
   }

@@ -1,33 +1,37 @@
-let txt, fuente;
 let jugador = new personaje();
 let pantalla = new pantallas();
-let botones = [];
-
+let boton = new Boton();
+let juego;
 
 function preload () {
-  txt = loadStrings ('texto.txt');
-  fuente = loadFont('PORKYS.TTF');
   pantalla.cargar();
 }
 
 function setup () {
   createCanvas (640, 480);
-  background(250);
   cursor('shurikenCursor.png');
-  crearBotones();
+  juego = new Juego()
+  juego.iniciar();
+  boton.crearBotones();
 }
 
 function draw () {
-  pantalla.mostrar();
-  botonesPantalla();
+  pantalla.dibujar();
+  boton.botonesPantalla();
+ if (pantalla.p === 'juego') {
+    juego.dibujarFondo(); 
+    juego.actualizar();   
+    jugador.dibujar();    
+  }
 }
 
 function keyPressed() {
-  jugador.mover();
-
-  //prueba para ver como cambiar p en botones, usar esto pero en botones xd
-
-  if (keyCode === LEFT_ARROW ) {
-    pantalla.p = "juego";
+if (pantalla.p === 'juego') {
+    jugador.mover();
   }
+}
+
+
+function mouseReleased() {
+  boton.cambioPantalla();
 }

@@ -18,8 +18,6 @@ function setup () {
 }
 
 function draw () {
-  fill (255, 0, 0);
-  textSize(20);
   pantalla.mostrar();
   botonesPantalla();
 }

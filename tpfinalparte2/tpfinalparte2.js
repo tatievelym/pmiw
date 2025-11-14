@@ -14,16 +14,14 @@ function setup () {
   createCanvas (640, 480);
   background(250);
   cursor('shurikenCursor.png');
-    crearBotones();
+  crearBotones();
 }
 
 function draw () {
-  fill (255,0,0);
+  fill (255, 0, 0);
   textSize(20);
-  text ("pantalla:" + pantalla.p, 10, 10);
- pantalla.mostrar();
+  pantalla.mostrar();
   botonesPantalla();
-
 }
 
 function keyPressed() {

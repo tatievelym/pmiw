@@ -1,5 +1,4 @@
 let txt, fuente;
-let imagenes = [];
 let jugador = new personaje();
 let pantalla = new pantallas();
 

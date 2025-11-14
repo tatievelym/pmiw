@@ -18,7 +18,7 @@ class pantallas {
       image(this.imagenes[0], 0, 0, width, height);
       console.log('pantalla '+p )
     }
-    if (p = 'controles'){
+    else if (p = 'controles'){
     image(this.imagenes[1], 0, 0, width, height);
     }
   }

@@ -20,6 +20,9 @@ function draw () {
 
 function keyPressed() {
   jugador.mover();
+  
+  //prueba para ver como cambiar p en botones, usar esto pero en botones xd 
+ 
   if (keyCode === LEFT_ARROW ) {
     pantalla.p = "juego";
   }

@@ -1,26 +1,26 @@
-let fondoX = 640, fondoY = 480; 
-let imagenes;
 let txt, fuente;
-let pantallas = [];
+let imagenes = [];
+let jugador = new personaje();
+let pantalla = new pantallas();
 
-function preload (){
+function preload () {
   txt = loadStrings ('texto.txt');
-fuente = loadFont('PORKYS.TTF');
-  for (let i=0; i<=2; i++) {
-let nombre = 'pantalla'+i+'.jpeg';
-  imagenes = loadImage('data/inicio.jpg');
-  }
+  fuente = loadFont('PORKYS.TTF');
+  pantalla.cargar();
+
 }
 
 function setup () {
-  createCanvas (fondoX, fondoY);
-   background(250);
-   cursor('shurikenCursor.png');
-  
-     
+  createCanvas (640, 480);
+  background(250);
+  cursor('shurikenCursor.png');
 }
 
 function draw () {
+  pantalla.mostrarInicio();
+  jugador.dibujar();
+}
 
-  image(imagenes, fondoX, fondoY);
+function keyPressed() {
+  jugador.mover();
 }

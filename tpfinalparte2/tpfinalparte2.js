@@ -6,7 +6,6 @@ function preload () {
   txt = loadStrings ('texto.txt');
   fuente = loadFont('PORKYS.TTF');
   pantalla.cargar();
-
 }
 
 function setup () {
@@ -17,9 +16,11 @@ function setup () {
 
 function draw () {
   pantalla.mostrar();
-  jugador.dibujar();
 }
 
 function keyPressed() {
   jugador.mover();
+  if (keyCode === LEFT_ARROW ) {
+    pantalla.p = "juego";
+  }
 }

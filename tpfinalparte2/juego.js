@@ -32,6 +32,7 @@ class Juego {
 
       if (this.detectarColision(obst)) {
         pantalla.p = 'perdiste';
+        this.perdiste = true;
         console.log("COLISIÓN");
       }
       if (obst.fueraDePantalla()) {
@@ -47,12 +48,10 @@ class Juego {
       jugador.y = this.puntoActivacion;
     }
     // ganaste
-    if (this.scrollY <= 0) {
-      if (jugador.y <= jugador.radio) {
-        this.ganaste = true;
-        pantalla.p = 'ganaste';
-        return;
-      }
+    if (this.scrollY <= 0 && jugador.y <= jugador.radio) {
+      this.ganaste = true;
+      pantalla.p = 'ganaste';
+      return;
     }
   }
 

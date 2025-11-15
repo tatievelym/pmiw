@@ -65,6 +65,7 @@ class Boton {
     if (pantalla.p === 'inicio') {
       if (this.botones[0].clic()) {
         pantalla.p = this.botones[0].destino; //juego
+        pantalla.sonidoCueva.play();
         juego.iniciar();
         console.log("cambiaste a pantalla:", pantalla.p);
         return;

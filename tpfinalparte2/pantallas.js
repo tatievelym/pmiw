@@ -2,6 +2,7 @@ class pantallas {
   constructor() {
     this.imagenes = [];
     this.videoGanaste;
+    this.sonidoCueva;
     this.p = 'inicio';
     this.txt,
       this.fuente;
@@ -17,10 +18,9 @@ class pantallas {
     this.imagenes[4] = loadImage('data/garu.png');
     this.imagenes[5] = loadImage('data/teclado.webp');
     this.imagenes[6] = loadImage('data/fondo.jpg');
-
+    this.sonidoCueva = loadSound('sonido/cueva.mp3');
     this.videoGanaste = createVideo('videos/finalB.mp4')
       this.videoGanaste.hide();
-
     this.videoGanaste.onended(() => {
       image(this.imagenes[1], 0, 0, width, height);
       this.videoGanaste.hide();
@@ -53,6 +53,7 @@ class pantallas {
     }
     //pantalla perdiste
     else if (this.p === 'perdiste') {
+      pantalla.sonidoCueva.stop();
       image(this.imagenes[1], 0, 0, width, height);
       textAlign(CENTER);
       textSize(24);
@@ -62,7 +63,7 @@ class pantallas {
     }
     //pantalla ganaste
     else if (this.p === 'ganaste') {
-      //
+
       image(this.videoGanaste, 0, 0, width, height);
       if (this.videoGanaste.time() === 0) {
         this.videoGanaste.play();

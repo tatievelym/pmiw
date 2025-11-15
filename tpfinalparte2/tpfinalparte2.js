@@ -11,22 +11,22 @@ function setup () {
   createCanvas (640, 480);
   cursor('shurikenCursor.png');
   juego = new Juego()
-  juego.iniciar();
+    juego.iniciar();
   boton.crearBotones();
 }
 
 function draw () {
   pantalla.dibujar();
   boton.botonesPantalla();
- if (pantalla.p === 'juego') {
-    juego.dibujarFondo(); 
-    juego.actualizar();   
-    jugador.dibujar();    
+  if (pantalla.p === 'juego') {
+    juego.dibujarFondo();
+    juego.actualizar();
+    jugador.dibujar();
   }
 }
 
 function keyPressed() {
-if (pantalla.p === 'juego') {
+  if (pantalla.p === 'juego') {
     jugador.mover();
   }
 }

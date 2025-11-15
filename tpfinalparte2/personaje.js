@@ -14,11 +14,11 @@ class personaje {
     // DEBUG: Círculo de Colisión del Personaje
     // Dibuja un círculo transparente para visualizar el área de colisión (radio)
     /*ellipseMode(CENTER);
-    noFill();
-    stroke(255, 0, 0); // Borde rojo
-    strokeWeight(2);
-    ellipse(this.x, this.y, this.radio * 2);*/
-    
+     noFill();
+     stroke(255, 0, 0); // Borde rojo
+     strokeWeight(2);
+     ellipse(this.x, this.y, this.radio * 2);*/
+
     image( pantalla.imagenes[4], this.x, this.y, this.t, this.t );
     pop();
   }

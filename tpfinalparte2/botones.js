@@ -53,7 +53,10 @@ class Boton {
       this.botones[2].dibujar("INICIO");
     } else if (pantalla.p === 'ganaste') {
       this.botones[3].dibujar("REINICIAR");
+    } else if (pantalla.p === 'perdiste') {
+      this.botones[3].dibujar("REINICIAR");
     }
+
     pop();
   }
 
@@ -84,6 +87,11 @@ class Boton {
         pantalla.p = "inicio";
         pantalla.videoGanaste.stop();
         pantalla.videoGanaste.time(0);
+        return;
+      }
+    } else if (pantalla.p === 'perdiste') {
+      if (this.botones[3].clic()) {
+        pantalla.p = "inicio";
         return;
       }
     }

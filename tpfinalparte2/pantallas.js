@@ -54,7 +54,11 @@ class pantallas {
     //pantalla perdiste
     else if (this.p === 'perdiste') {
       image(this.imagenes[1], 0, 0, width, height);
-      console.log('pantalla '+this.p )
+      textAlign(CENTER);
+      textSize(24);
+      textFont(this.fuente);
+      text(this.txt[3], 10, 250, width - 20, height - 200);
+      console.log('pantalla ' + this.p);
     }
     //pantalla ganaste
     else if (this.p === 'ganaste') {

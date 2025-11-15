@@ -19,7 +19,7 @@ class pantallas {
     this.imagenes[5] = loadImage('data/teclado.webp');
     this.imagenes[6] = loadImage('data/fondo.jpg');
     this.sonidoCueva = loadSound('sonido/cueva.mp3');
-    this.videoGanaste = createVideo('videos/finalB.mp4')
+    this.videoGanaste = createVideo('videos/finalBR.mp4')
       this.videoGanaste.hide();
     this.videoGanaste.onended(() => {
       image(this.imagenes[1], 0, 0, width, height);

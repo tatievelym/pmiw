@@ -42,9 +42,14 @@ class pantallas {
     //pantalla controles
     else if (this.p === 'controles') {
       image(this.imagenes[1], 0, 0, width, height);
+      textAlign(CENTER);
+      textSize(24);
+      textFont(this.fuente);
       text(this.txt[2], 10, 150, width-10, height-200);
       image(this.imagenes[5], width/2-75, height/2-75, 150, 150);
+      text(this.txt[4], 10, 320, width-20, 200);
     }
+
     //pantalla Juego
     else if (this.p === 'juego') {
       //      image(this.imagenes[6], 0, 0, width, height);

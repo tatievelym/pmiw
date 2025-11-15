@@ -1,10 +1,10 @@
 /*Alumnos:
-Sokol Tobias Ezequiel 120375/9
-Tatiana montenegro 120347/4
-links al video
-video Tobias:
-video de tatiana:
-*/
+ Sokol Tobias Ezequiel 120375/9
+ Tatiana montenegro 120347/4
+ links al video
+ video Tobias:
+ video de tatiana: https://youtu.be/LphF5PhELf0
+ */
 
 let jugador = new personaje();
 let pantalla = new pantallas();
@@ -26,7 +26,6 @@ function setup () {
 function draw () {
   pantalla.dibujar();
   boton.botonesPantalla();
-
 }
 
 function keyPressed() {

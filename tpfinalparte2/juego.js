@@ -21,10 +21,12 @@ class Juego {
   }
 
   actualizar() {
-    // Generar obst
+    // generar obstáculos
     if (frameCount % this.tasaSpawn === 0) {
       this.obstaculos.push(new Obst());
     }
+
+    // mover y dibujar obstáculos
     for (let i = this.obstaculos.length - 1; i >= 0; i--) {
       let obst = this.obstaculos[i];
       obst.caer();
@@ -35,18 +37,21 @@ class Juego {
         this.perdiste = true;
         console.log("COLISIÓN");
       }
+
       if (obst.fueraDePantalla()) {
         this.obstaculos.splice(i, 1);
       }
     }
+
     if (this.perdiste || this.ganaste) return;
 
-    //scroll
+    // scroll
     if (jugador.y < this.puntoActivacion && this.scrollY > 0) {
       let desplazamiento = this.puntoActivacion - jugador.y;
       this.scrollY = max(this.scrollY - desplazamiento, 0);
       jugador.y = this.puntoActivacion;
     }
+
     // ganaste
     if (this.scrollY <= 0 && jugador.y <= jugador.radio) {
       this.ganaste = true;

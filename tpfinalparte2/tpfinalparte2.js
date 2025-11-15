@@ -18,11 +18,7 @@ function setup () {
 function draw () {
   pantalla.dibujar();
   boton.botonesPantalla();
-  if (pantalla.p === 'juego') {
-    juego.dibujarFondo();
-    juego.actualizar();
-    jugador.dibujar();
-  }
+
 }
 
 function keyPressed() {

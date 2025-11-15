@@ -52,8 +52,9 @@ class pantallas {
 
     //pantalla Juego
     else if (this.p === 'juego') {
-      //      image(this.imagenes[6], 0, 0, width, height);
-      //      jugador.dibujar();
+    juego.dibujarFondo();
+    juego.actualizar();
+    jugador.dibujar();
       console.log('pantalla '+this.p )
     }
     //pantalla perdiste

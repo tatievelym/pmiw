@@ -20,7 +20,7 @@ class pantallas {
 
     this.videoGanaste = createVideo('videos/finalB.mp4')
       this.videoGanaste.hide();
-      
+
     this.videoGanaste.onended(() => {
       image(this.imagenes[1], 0, 0, width, height);
       this.videoGanaste.hide();
@@ -60,7 +60,9 @@ class pantallas {
     else if (this.p === 'ganaste') {
       //
       image(this.videoGanaste, 0, 0, width, height);
-      this.videoGanaste.play();
+      if (this.videoGanaste.time() === 0) {
+        this.videoGanaste.play();
+      }
       console.log('pantalla '+this.p )
     }
   }

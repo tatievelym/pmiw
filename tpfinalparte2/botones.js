@@ -35,7 +35,8 @@ class Boton {
       // x, y, w, h, texto, destino
       new Boton(50, 350, 140, 60, "juego"), // índice 0: Iniciar
       new Boton(width-250, 350, 200, 60, "controles"), // índice 1: controles
-      new Boton(width/2-60, 350, 120, 60, "inicio")      // índice 2: inicio
+      new Boton(width/2-60, 350, 120, 60, "inicio"), // índice 2: inicio
+      new Boton(width/2 - 90, 350, 170, 60, "inicio") // índice 3: reiniciar
     ];
   }
 
@@ -50,10 +51,12 @@ class Boton {
       this.botones[1].dibujar("CONTROLES");
     } else if (pantalla.p === 'controles') {
       this.botones[2].dibujar("INICIO");
+    } else if (pantalla.p === 'ganaste') {
+      this.botones[3].dibujar("REINICIAR");
     }
     pop();
   }
- 
+
   cambioPantalla() {
     //INICIO
     if (pantalla.p === 'inicio') {
@@ -74,6 +77,13 @@ class Boton {
       if (this.botones[2].clic()) {
         pantalla.p = this.botones[2].destino; //inicio
         console.log("cambiaste a pantalla:", pantalla.p);
+        return;
+      }
+    } else if (pantalla.p === 'ganaste') {
+      if (this.botones[3].clic()) {
+        pantalla.p = "inicio";
+        pantalla.videoGanaste.stop();
+        pantalla.videoGanaste.time(0);
         return;
       }
     }
